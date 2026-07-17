@@ -1,4 +1,7 @@
 package model;
+
+import java.util.Arrays;
+
 public class PacketRecord {
     private final long timestampSeconds;
     private final long timestampMicroseconds;
@@ -6,13 +9,12 @@ public class PacketRecord {
     private final int originalLength;
     private final byte[] packetData;
 
-
     public PacketRecord(
-        long timestampSeconds,
-        long timestampMicroseconds,
-        int capturedLength,
-        int originalLength,
-        byte[] packetData) {
+            long timestampSeconds,
+            long timestampMicroseconds,
+            int capturedLength,
+            int originalLength,
+            byte[] packetData) {
 
         if (packetData == null) {
             throw new IllegalArgumentException("Packet data cannot be null.");
@@ -47,11 +49,11 @@ public class PacketRecord {
     @Override
     public String toString() {
         return "PacketRecord{" +
-            "timestampSeconds=" + timestampSeconds +
-            ", timestampMicroseconds=" + timestampMicroseconds +
-            ", capturedLength=" + capturedLength +
-            ", originalLength=" + originalLength +
-            ", packetData=" + Arrays.toString(packetData) +
-            '}';
+                "timestampSeconds=" + timestampSeconds +
+                ", timestampMicroseconds=" + timestampMicroseconds +
+                ", capturedLength=" + capturedLength +
+                ", originalLength=" + originalLength +
+                ", packetData=" + Arrays.toString(packetData) +
+                '}';
     }
 }
